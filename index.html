@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount(count + 1)} style={buttonStyle}>+</button>
+            <button onClick={() => setCount(count > 0 ? count - 1 : 0)} style={buttonStyle}>-</button>
+            <button onClick={() => setCount(0)} style={resetButtonStyle}>Reset</button>
+        </div>
+    );
+}
+
+const buttonStyle = {
+    margin: '5px',
+    padding: '10px 15px',
+    fontSize: '16px',
+    cursor: 'pointer',
+};
+
+const resetButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: 'red',
+    color: 'white',
+};
+
+export default Counter;
